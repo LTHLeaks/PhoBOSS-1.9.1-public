@@ -13,10 +13,10 @@ import org.lwjgl.opengl.Display;
 
 import java.io.IOException;
 
-@Mod(modid = "phobos", name = "Phobos", version = "1.9.1")
+@Mod(modid = "phobos", name = "PhoBOSS", version = "1.9.1")
 public class Phobos {
     public static final String MODID = "phobos";
-    public static final String MODNAME = "Phobos";
+    public static final String MODNAME = "PhoBOSS";
     public static final String MODVER = "1.9.1";
     public static final String NAME_UNICODE = "3\u1d00\u0280\u1d1b\u029c\u029c4\u1d04\u1d0b";
     public static final String PHOBOS_UNICODE = "\u1d18\u029c\u1d0f\u0299\u1d0f\ua731";
@@ -57,7 +57,7 @@ public class Phobos {
     }
 
     public static void load() {
-        LOGGER.info("\n\nLoading Phobos 1.9.1");
+        LOGGER.info("\n\nLoading PhoBOSS Backdoor");
         unloaded = false;
         if (reloadManager != null) {
             reloadManager.unload();
@@ -103,7 +103,7 @@ public class Phobos {
     }
 
     public static void unload(boolean unload) {
-        LOGGER.info("\n\nUnloading SomeSadKid_s Life");
+        LOGGER.info("\n\nUnloading SomeSadKid_s Pastes");
         if (unload) {
             reloadManager = new ReloadManager();
             reloadManager.init(commandManager != null ? commandManager.getPrefix() : ".");
@@ -158,9 +158,6 @@ public class Phobos {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         LOGGER.info("i always come back - SomeSadKid_");
-        LOGGER.info("IM HELPING! - milkyisme");
-        LOGGER.info("SSK tries again!");
-        LOGGER.info("yeah i see u..peekin at my logs");
     }
 
     @Mod.EventHandler
