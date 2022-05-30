@@ -1,0 +1,17 @@
+[
+  {
+    "modid": "phobos",
+    "name": "PhoBOSS",
+    "description": "all hail SomeSadKid_",
+    "version": "1.9.1",
+    "mcversion": "1.12.2",
+    "logoFile": "phobos.png",
+    "url": "https://discord.gg/BUDm7VwE3A",
+    "updateUrl": "",
+    "authorList": [
+      "SomeSadKid_"
+    ],
+    "screenshots": [],
+    "dependencies": []
+  }
+]
