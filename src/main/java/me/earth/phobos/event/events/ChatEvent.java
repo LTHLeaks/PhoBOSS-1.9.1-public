@@ -1,6 +1,6 @@
-package com.example.examplemod.event.events;
+package me.earth.phobos.event.events;
 
-import com.example.examplemod.event.EventStage;
+import me.earth.phobos.event.EventStage;
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
 
 @Cancelable
