@@ -166,7 +166,7 @@ public class Phobos {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         customMainScreen = new GuiCustomMainScreen();
-        Display.setTitle("PhoBOSS - v.1.9.1 Remaster");
+        Display.setTitle("PhoBOSS Rewrite by SomeSadKid_");
         Phobos.load();
     }
 }
