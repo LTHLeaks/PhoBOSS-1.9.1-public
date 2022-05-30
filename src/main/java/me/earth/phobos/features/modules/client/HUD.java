@@ -38,7 +38,7 @@ public class HUD
     private static HUD INSTANCE = new HUD();
     private final Setting<Boolean> renderingUp = this.register(new Setting<Boolean>("RenderingUp", Boolean.valueOf(false), "Orientation of the HUD-Elements."));
     private final Setting<WaterMark> watermark = this.register(new Setting<WaterMark>("Logo", WaterMark.NONE, "WaterMark"));
-    private final Setting<String> customWatermark = this.register(new Setting<String>("WatermarkName", "SSK.club b1"));
+    private final Setting<String> customWatermark = this.register(new Setting<String>("WatermarkName", "ssk.club b1"));
     private final Setting<Boolean> modeVer = this.register(new Setting<Object>("Version", Boolean.valueOf(false), v -> this.watermark.getValue() != WaterMark.NONE));
     private final Setting<Boolean> arrayList = this.register(new Setting<Boolean>("ActiveModules", Boolean.valueOf(false), "Lists the active modules."));
     private final Setting<Boolean> moduleColors = this.register(new Setting<Object>("ModuleColors", Boolean.valueOf(false), v -> this.arrayList.getValue()));
@@ -208,7 +208,7 @@ public class HUD
                 break;
             }
             case REMAS: {
-                this.renderer.drawString("PhobosRemaster" + (this.modeVer.getValue() ? " v1.9.1" : ""), 2.0f, 2.0f, (this.rolling.getValue() && this.rainbow.getValue()) ? this.colorMap.get(2) : this.color, true);
+                this.renderer.drawString("PhoBOSS Rewrite by SSK" + (this.modeVer.getValue() ? " v1.9.1" : ""), 2.0f, 2.0f, (this.rolling.getValue() && this.rainbow.getValue()) ? this.colorMap.get(2) : this.color, true);
                 break;
             }
             case CUSTOM: {
