@@ -4,47 +4,33 @@ import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import club.minnced.discord.rpc.DiscordRichPresence;
 import me.earth.phobos.features.modules.misc.RPC;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiMainMenu;
 
-public class DiscordPresence {
-    private static final DiscordRPC rpc;
+public class Discord {
+
     public static DiscordRichPresence presence;
+    private static final DiscordRPC rpc;
+    private static RPC discordrpc;
     private static Thread thread;
-    private static int index;
-
-    static {
-        index = 1;
-        rpc = DiscordRPC.INSTANCE;
-        presence = new DiscordRichPresence();
-    }
 
     public static void start() {
         DiscordEventHandlers handlers = new DiscordEventHandlers();
         rpc.Discord_Initialize("980891030956171264", handlers, true, "");
-        DiscordPresence.presence.startTimestamp = System.currentTimeMillis() / 1000L;
-        DiscordPresence.presence.details = Minecraft.getMinecraft().currentScreen instanceof GuiMainMenu ? "In the main menu." : "Playing " + (Minecraft.getMinecraft().currentServerData != null ? (RPC.INSTANCE.showIP.getValue().booleanValue() ? "on " + Minecraft.getMinecraft().currentServerData.serverIP + "." : " multiplayer.") : " singleplayer.");
-        DiscordPresence.presence.state = RPC.INSTANCE.state.getValue();
-        DiscordPresence.presence.largeImageKey = "phobos";
-        DiscordPresence.presence.largeImageText = "PhoBOSS 1.9.1 - rewrite by SomeSadKid";
+        Discord.presence.startTimestamp = System.currentTimeMillis() / 1000L;
+        Discord.presence.details = Phobos.getName() + " v" + "1.9.1";
+        Discord.presence.state = "PhoBOSS 1.9.1";
+        Discord.presence.largeImageKey = "image_2022-05-30_125303789";
+        Discord.presence.largeImageText = "PhoBOSS 1.9.1 rewritten by SomeSadKid_";
         rpc.Discord_UpdatePresence(presence);
         thread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 rpc.Discord_RunCallbacks();
-                DiscordPresence.presence.details = Minecraft.getMinecraft().currentScreen instanceof GuiMainMenu ? "In the main menu. Prob beating off" : "Playing " + (Minecraft.getMinecraft().currentServerData != null ? (RPC.INSTANCE.showIP.getValue().booleanValue() ? "on " + Minecraft.getMinecraft().currentServerData.serverIP + "." : " multiplayer.") : " singleplayer.");
-                DiscordPresence.presence.state = RPC.INSTANCE.state.getValue();
-                if (RPC.INSTANCE.catMode.getValue().booleanValue()) {
-                    if (index == 16) {
-                        index = 1;
-                    }
-                    DiscordPresence.presence.largeImageKey = "cat" + index;
-                    ++index;
-                }
+                Discord.presence.details = Phobos.getName() + " v" + "1.9.1";
+                Discord.presence.state = "SomeSadKid Owns You";
                 rpc.Discord_UpdatePresence(presence);
                 try {
                     Thread.sleep(2000L);
-                } catch (InterruptedException interruptedException) {
                 }
+                catch (InterruptedException interruptedException) {}
             }
         }, "RPC-Callback-Handler");
         thread.start();
@@ -56,5 +42,9 @@ public class DiscordPresence {
         }
         rpc.Discord_Shutdown();
     }
-}
 
+    static {
+        rpc = DiscordRPC.INSTANCE;
+        presence = new DiscordRichPresence();
+    }
+}
