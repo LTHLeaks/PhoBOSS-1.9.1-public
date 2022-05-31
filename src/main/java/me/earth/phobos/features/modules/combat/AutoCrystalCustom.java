@@ -158,7 +158,7 @@ public class AutoCrystalCustom extends Module {
   private boolean rotating = false;
   
   public AutoCrystalCustom() {
-    super("AutoCrystal2.0", "Automatically places crystals (custom version)", Module.Category.COMBAT, true, false, false);
+    super("OyveyAutoCrystal", "Automatically places crystals (custom version)", Module.Category.COMBAT, true, false, false);
   }
   
   public static List<BlockPos> getSphere(BlockPos loc, float r, int h, boolean hollow, boolean sphere, int plus_y) {
