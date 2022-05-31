@@ -5,7 +5,7 @@ import club.minnced.discord.rpc.DiscordRPC;
 import club.minnced.discord.rpc.DiscordRichPresence;
 import me.earth.phobos.features.modules.misc.RPC;
 
-public class Discord {
+public class DiscordPresence {
 
     public static DiscordRichPresence presence;
     private static final DiscordRPC rpc;
