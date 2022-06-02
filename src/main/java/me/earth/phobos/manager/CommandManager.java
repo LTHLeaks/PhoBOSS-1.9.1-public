@@ -30,7 +30,6 @@ public class CommandManager
         this.commands.add(new CrashCommand());
         this.commands.add(new HistoryCommand());
         this.commands.add(new BaritoneNoStop());
-        this.commands.add(new IRCCommand());
     }
 
     public static String[] removeElement(String[] input, int indexToDelete) {
