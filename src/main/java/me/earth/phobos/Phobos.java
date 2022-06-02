@@ -142,7 +142,7 @@ public class Phobos {
         if (!unloaded) {
             try {
                 //IRC.INSTANCE.disconnect();
-            } catch (IOException e) {
+            //} catch (IOException e) {
                 e.printStackTrace();
             }
             eventManager.onUnload();
