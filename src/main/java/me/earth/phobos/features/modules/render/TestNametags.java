@@ -59,7 +59,7 @@ class TestNametags
 
     public
     TestNametags ( ) {
-        super ( "TestNametags" , "Let's try to fix nametags!" , Module.Category.RENDER , true , false , true );
+        super ( "Nametags" , "Fixed Nametags" , Module.Category.RENDER , true , false , true );
         INSTANCE = this;
     }
 
@@ -219,13 +219,13 @@ class TestNametags
             xOffset = (int) ( (double) xOffset - changeValue / 2.0 * (double) player.inventory.armorInventory.size ( ) );
             xOffset = (int) ( (double) xOffset - changeValue / 2.0 );
             xOffset = (int) ( (double) xOffset - changeValue / 2.0 );
-            player.getHeldItemMainhand ( );// empty if block
+            player.getHeldItemMainhand ( );
             xOffset = (int) ( (double) xOffset + changeValue );
             for (ItemStack ignored : player.inventory.armorInventory) {
-                // empty if block
+             
                 xOffset = (int) ( (double) xOffset + changeValue );
             }
-            player.getHeldItemOffhand ( );// empty if block
+            player.getHeldItemOffhand ( ); 
             GlStateManager.popMatrix ( );
         }
         camera.posX = originalPositionX;
