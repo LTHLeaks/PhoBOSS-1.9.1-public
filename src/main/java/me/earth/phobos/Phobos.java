@@ -136,15 +136,7 @@ public class Phobos {
     public static void reload() {
         Phobos.unload(false);
         Phobos.load();
-    }
 
-    public static void onUnload() {
-        if (!unloaded) {
-            //try {
-                //IRC.INSTANCE.disconnect();
-            //} catch (IOException e) {
-                e.printStackTrace();
-            }
             eventManager.onUnload();
             moduleManager.onUnload();
             configManager.saveConfig(Phobos.configManager.config.replaceFirst("phobos/", ""));
