@@ -163,7 +163,7 @@ public class Phobos {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         customMainScreen = new GuiCustomMainScreen();
-        Display.setTitle("PhoBOSS Rewrite by SomeSadKid_");
+        Display.setTitle("PhoBOSS Rewritten by SomeSadKid_#7095");
         Phobos.load();
     }
 }
