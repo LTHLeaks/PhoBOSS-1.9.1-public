@@ -24,7 +24,7 @@ public class DiscordPresence {
         thread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 rpc.Discord_RunCallbacks();
-                DiscordPresence.presence.details =  "PhoBOSS 1.9.1";
+                DiscordPresence.presence.details =  "PhoBOSS has been Rewritten";
                 DiscordPresence.presence.state = "SomeSadKid Owns You";
                 rpc.Discord_UpdatePresence(presence);
                 try {
